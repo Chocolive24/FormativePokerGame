@@ -1,5 +1,5 @@
-#include "Player.h"
 #include "Deck.h"
+#include "Player.h"
 
 #include <iostream>
 #include <vector>
