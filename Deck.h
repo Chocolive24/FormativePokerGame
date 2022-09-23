@@ -1,26 +1,26 @@
 #pragma once
-#include <string>
-#include <vector>
 
 #include "Card.h"
 #include "Player.h"
 
+#include <vector>
+
 class Deck
 {
-public:
-	//Deck();
 private:
-	std::vector<Card> _deck; // creat the deck of cards (52 cards)
-	//std::vector<Player> _playersNames;
+	std::vector<Card> _deck; 
 
 public:
-	//std::vector<Card> GetDeck();
-	//void CreatePlayers();
-	std::vector<Player> GetPlayersNames();
+	// Methods link to the "dealer" part of the deck class
 	void AddCardsToDeck();
 	void ShuffleDeck();
-	Card GiveACard(); // method which return a specific card
+
+	// Methods link to the "master of the game" part of the deck class
+	static void CreatePlayers(std::vector<Player>& playersNames);
+	Card GiveACard(); 
 	void DistributeCards(Deck &deck, std::vector<Player> &playersNames);
 	void ShowPlayersHands(std::vector<Player> &playersNames);
+	void DetermineTheWinner(std::vector<Player> &playersNames);
+	void PlayAgain(Deck &deck, std::vector<Player> &playersNames, bool &game);
 	void ClearDeck();
 };

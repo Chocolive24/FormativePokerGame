@@ -1,14 +1,8 @@
 #include "Pattern.h"
 
-//Pattern::Pattern(PatternValue patternValue)
-//{
-//	_patternValue = patternValue;
-//}
-
-
 Pattern::Pattern()
 {
-	_patternValue = PatternValue::HighCard;
+	_patternValue = PatternValue::HIGHCARD;
 	_bestCard = CardValue::TWO;
 	_secondBestCard = CardValue::TWO;
 }
@@ -17,31 +11,29 @@ std::string Pattern::GetPattern()
 {
 	switch (_patternValue)
 	{
-	case PatternValue::HighCard:
+	case PatternValue::HIGHCARD:
 		return "High Card";
-	case PatternValue::Pair:
+	case PatternValue::PAIR:
 		return "Pair";
-	case PatternValue::TwoPairs:
+	case PatternValue::TWOPAIRS:
 		return "Two Pairs";
-	case PatternValue::ThreeOfAKind:
+	case PatternValue::THREEOFAKIND:
 		return "Three of a kind";
-	case PatternValue::Straight:
+	case PatternValue::STRAIGHT:
 		return "Straight";
-	case PatternValue::Flush:
+	case PatternValue::FLUSH:
 		return "Flush";
-	case PatternValue::FullHouse:
+	case PatternValue::FULLHOUSE:
 		return "Full house";
-	case PatternValue::FourOfAKind:
+	case PatternValue::FOUROFAKIND:
 		return "Four of a kind";
-	case PatternValue::StraightFlush:
+	case PatternValue::STRAIGHTFLUSH:
 		return "Straight flush";
-	case PatternValue::RoyalFlush:
+	case PatternValue::ROYALFLUSH:
 		return "Royal flush";
-	case PatternValue::PatternEnd:
+	case PatternValue::PATTERNEND:
 		return "unknown";
 	default:
 		return "unknown";
 	}
 }
-
-

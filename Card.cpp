@@ -6,7 +6,7 @@ Card::Card(enum CardSuit cardSuit, enum CardValue cardValue)
 	CardValue = cardValue;
 }
 
-std::string Card::getCardSuitAsString(enum CardSuit cardSuit)
+std::string Card::GetCardSuitAsString(enum CardSuit cardSuit)
 {
 	switch(cardSuit)
 	{
@@ -25,7 +25,7 @@ std::string Card::getCardSuitAsString(enum CardSuit cardSuit)
 	}
 }
 
-std::string Card::getCardValueAsString(enum CardValue cardValue)
+std::string Card::GetCardValueAsString(enum CardValue cardValue)
 {
     switch (cardValue)
     {
@@ -64,5 +64,5 @@ std::string Card::getCardValueAsString(enum CardValue cardValue)
 
  std::string Card::ToString()
 {
-	return getCardValueAsString(CardValue)  + " of " + getCardSuitAsString(CardSuit);
+	return GetCardValueAsString(CardValue)  + " of " + GetCardSuitAsString(CardSuit);
 }

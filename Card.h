@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 
 enum class CardSuit  
@@ -8,7 +9,7 @@ enum class CardSuit
 	SPADES,
 	DIAMONDS,
 
-	SUITEND 
+	SUITEND
 };
 
 enum class CardValue
@@ -33,13 +34,12 @@ enum class CardValue
 class Card
 {
 public:
-	Card(CardSuit cardSuit, CardValue cardValue);
-
+	Card(enum CardSuit cardSuit, enum CardValue cardValue);
 
 	CardSuit CardSuit;
 	CardValue CardValue;
 
-	static std::string getCardSuitAsString(enum CardSuit cardSuit);
-	static std::string getCardValueAsString(enum CardValue cardValue);
+	static std::string GetCardSuitAsString(enum CardSuit cardSuit);
+	static std::string GetCardValueAsString(enum CardValue cardValue);
 	std::string ToString();
 };

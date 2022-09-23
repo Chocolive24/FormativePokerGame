@@ -1,22 +1,23 @@
 #pragma once
-#include <string>
+
 #include "Card.h"
+
+#include <string>
 
 enum class PatternValue
 {
-	HighCard,
-	Pair,
-	TwoPairs,
-	ThreeOfAKind,
-	Straight,
-	Flush,
-	FullHouse,
-	FourOfAKind,
-	StraightFlush,
-	RoyalFlush,
+	HIGHCARD,
+	PAIR,
+	TWOPAIRS,
+	THREEOFAKIND,
+	STRAIGHT,
+	FLUSH,
+	FULLHOUSE,
+	FOUROFAKIND,
+	STRAIGHTFLUSH,
+	ROYALFLUSH,
 
-	PatternEnd
-
+	PATTERNEND
 };
 
 class Pattern
@@ -30,5 +31,4 @@ public:
 	CardValue _secondBestCard;
 
 	std::string GetPattern();
-
 };
