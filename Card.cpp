@@ -1,14 +1,14 @@
 #include "Card.h"
 
-Card::Card(CardSuit cardSuit, CardValue cardValue)
+Card::Card(enum CardSuit cardSuit, enum CardValue cardValue)
 {
-	this->_cardSuit = cardSuit;
-	this->_cardValue = cardValue;
+	CardSuit = cardSuit;
+	CardValue = cardValue;
 }
 
-std::string Card::getCardSuitAsString()
+std::string Card::getCardSuitAsString(enum CardSuit cardSuit)
 {
-	switch(this->_cardSuit)
+	switch(cardSuit)
 	{
 		case CardSuit::CLUBS:
 			return "Clubs";
@@ -18,14 +18,16 @@ std::string Card::getCardSuitAsString()
 			return "Spades";
 		case CardSuit::DIAMONDS:
 			return "Diamonds";
-		case CardSuit::SuitEnd:
+		case CardSuit::SUITEND:
+            return "Unknown";
+        default:
             return "Unknown";
 	}
 }
 
-std::string Card::getCardValueAsString()
+std::string Card::getCardValueAsString(enum CardValue cardValue)
 {
-    switch (this->_cardValue)
+    switch (cardValue)
     {
     case CardValue::TWO:
         return "2";
@@ -53,12 +55,14 @@ std::string Card::getCardValueAsString()
         return "King";
     case CardValue::ACE:
         return "Ace";
-    case CardValue::ValueEnd:
-        return "unknown";
+    case CardValue::VALUEEND:
+        return "Unknown";
+    default:
+        return "Unknown";
     }
 }
 
-std::string Card::ToString()
+ std::string Card::ToString()
 {
-	return getCardValueAsString()  + " of " + getCardSuitAsString();
+	return getCardValueAsString(CardValue)  + " of " + getCardSuitAsString(CardSuit);
 }

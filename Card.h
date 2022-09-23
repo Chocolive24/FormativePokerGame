@@ -8,7 +8,7 @@ enum class CardSuit
 	SPADES,
 	DIAMONDS,
 
-	SuitEnd, 
+	SUITEND 
 };
 
 enum class CardValue
@@ -27,21 +27,19 @@ enum class CardValue
 	KING = 13,
 	ACE = 14,
 
-	ValueEnd, 
+	VALUEEND 
 };
 
 class Card
 {
-public: // constructor 1st
+public:
 	Card(CardSuit cardSuit, CardValue cardValue);
 
-private: // attributs and intern methods 2nd
-	CardSuit _cardSuit;
-	CardValue _cardValue;
 
-	std::string getCardSuitAsString();
-	std::string getCardValueAsString();
+	CardSuit CardSuit;
+	CardValue CardValue;
 
-public: // extern method 3rd
+	static std::string getCardSuitAsString(enum CardSuit cardSuit);
+	static std::string getCardValueAsString(enum CardValue cardValue);
 	std::string ToString();
 };

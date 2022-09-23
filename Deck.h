@@ -15,9 +15,12 @@ private:
 
 public:
 	//std::vector<Card> GetDeck();
-	void CreatePlayers();
+	//void CreatePlayers();
 	std::vector<Player> GetPlayersNames();
 	void AddCardsToDeck();
 	void ShuffleDeck();
 	Card GiveACard(); // method which return a specific card
+	void DistributeCards(Deck &deck, std::vector<Player> &playersNames);
+	void ShowPlayersHands(std::vector<Player> &playersNames);
+	void ClearDeck();
 };
